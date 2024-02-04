@@ -12,19 +12,19 @@
 </head>
 
 <body>
-  <nav class="">
+  <nav class="navbar is-transparent">
     <div class="navbar-brand">
-      <a class="navbar-item" href="">
+      <a class="navbar-item" href="https://bulma.io">
         <p>Guilt Free Gourmet</p>
       </a>
-      <!-- <div class="navbar-burger" data-target="navbarExampleTransparentExample">
+      <div class="navbar-burger" data-target="navbarExampleTransparentExample">
         <span></span>
         <span></span>
         <span></span>
       </div>
-    </div> -->
+    </div>
   
-    
+   
       <div class=" navbar-end dropdown is-hoverable">
         <div class="dropdown-trigger">
           <button class="button" aria-haspopup="true" aria-controls="dropdown-menu4">
@@ -53,15 +53,47 @@
 @media (max-width: 768px) { .hero  { background: black url(/public/images/rawfoodonwood.jpg ) center / cover; } }</style>
   
   <section class="hero is-fullheight" >
-<body id="main-body"> 
-    <main class="container container-fluid mt-5">
-        <!-- Render the sub layout -->
-        {{{ body }}}
-      </main>
-</body>
-<footer>
+
     <div>
-        <p class="text-center has-text-white">&copy; 2024 Guilt Free Gourmet</p>
-     </div>
-</footer>
+      <h2 class="text-center has-text-white">Welcome, {{name}}!</h2>
+    </div>
+  
+  <!-- this is the body of the create recipe page -->
+    <div class="container">
+      <div class="is-justify-content-center is-align-content-center" id="intro-page">
+        <h2 class="text-center">Create New Recipes</h2>
+      <div class="row mt-4">
+        <div class="col-md-6">
+          <form class="form new-recipe-form">
+            <div class="form-group">
+              <label for="recipe-name">Recipe Name:</label>
+              <input class="form-input has-text-black" type="text" id="recipe-name" name="recipe-name" />
+            </div>
+            <div></div>
+            <div class="form-group">
+              <label for="recipe-ingredients">Ingredients:</label>
+              <textarea class="form-input has-text-black" id="recipe-ingredients" name="recipe-ingridients"></textarea>
+            </div>
+            <div class="form-group">
+              <label for="recipe-directions">Directions:</label>
+              <textarea class="form-input has-text-black" id="recipe-directions" name="recipe-directions"></textarea>
+            </div>
+            <div class="form-group">
+              <button type="submit" class="btn btn-primary">Create</button>
+            </div>
+          </form>
+        </div>
+    </div>
+      </div>
+    </div>
+
+  
+  <div>
+    <p class="text-center has-text-white">&copy; 2024 Guilt Free Gourmet</p>
+ </div>
+
+
+  
+
+</body>
 </html>

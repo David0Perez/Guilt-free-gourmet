@@ -1,8 +1,6 @@
-
-
- #intro-page {
-    background-color: #000000; 
-    opacity: .1; 
+#intro-page {
+    background-color: #000; 
+    opacity: .7; 
     color: white; 
     padding: 10px; border-radius: 10px;
     justify-items: center;
