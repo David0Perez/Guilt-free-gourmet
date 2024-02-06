@@ -34,3 +34,4 @@ const seedDatabase = async ()=>{
 };
 
 seedDatabase();
+module.exports = { User, Recipes, Comments };
