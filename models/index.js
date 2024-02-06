@@ -5,7 +5,7 @@ const Category = require('./Category');
 const Comments = require('./Comments');
 
 User.hasMany(Recipes, {
-    foreignKey: 'category_id',
+    foreignKey: 'recipe_id',
     onDelete: 'CASCADE'
 });
 
