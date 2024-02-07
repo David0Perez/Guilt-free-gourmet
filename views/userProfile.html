@@ -63,14 +63,15 @@
     <div class="is-justify-content-center is-align-content-center" id="intro-page">
       <h2>My Recipes</h2>
       <!-- this is where the recipes that have been saved will display in link formation-->
-      
+           
       
       <div>
         <input class="has-text-black" type="text" placeholder="Search Favorite" autofocus />
             <button class="btn">Find</button>
       </div>
       {{#if recipes.length}}
-      <div>
+      <!-- If this is the DIV for each recipe will be displayed => Classname added to identify it on javaScript -->
+      <div class="savedDisplay">
         {{#each recipes as |recipe|}}
           <div >
             <h4><a href="/recipe/{{recipe.id}}">{{recipe.name}}</a></h4>

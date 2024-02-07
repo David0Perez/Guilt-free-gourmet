@@ -5,6 +5,16 @@ const Category = require('./Category');
 const Comments = require('./Comments');
 
 User.hasMany(Recipes, {
+    foreignKey: 'recipe_id',
+    onDelete: 'CASCADE'
+});
+//Recipes belongs to User
+Recipes.belongsTo(User, {
+    foreignKey: 'recipe_id'
+});
+
+//Category hasMnay recipes
+Category.hasMany(Recipes, {
     foreignKey: 'category_id',
     onDelete: 'CASCADE'
 });
