@@ -17,7 +17,7 @@ Recipes.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
-        ingredients:{
+        nutrients:{
             //since ingrediens section is going to be a list of options => Stored in an array
             type: DataTypes.STRING,
             allowNull: false,

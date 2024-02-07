@@ -11,3 +11,4 @@ Database is going to be returned by either external and locally ways:
 4. Start working on the external API request. => Edamam.
 5. See a future implementation => Upload a picture from the user?
 Or another website functionality.
+6. ASK about Array dataType on the list of nutrients. 

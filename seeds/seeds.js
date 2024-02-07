@@ -1,11 +1,12 @@
 // Double check on the API cause i think just the nutrition facts are added
 
 const sequelize = require('../config/connection');
-const { User, Recipes, Comments } = require('../models');
+const { User, Recipes, Comments, Category } = require('../models');
 
 const userData = require('./userData.json');
 const recipeData = require('./recipeData.json');
 const commentData = require('./commentData.json');
+const categoryData = require('./categoryData.json');
 
 const seedDatabase = async ()=>{
     await sequelize.sync({ force: true });
@@ -14,6 +15,13 @@ const seedDatabase = async ()=>{
         individualHooks: true,
         returning: true,
     });
+
+    for (category of categoryData){
+        await Category.create({
+            ...category,
+            user_id: users[Math.floor(Math.random() * users.length)].id,
+        });
+    };
 
     for (const recipe of recipeData){
         await Recipes.create({
@@ -34,4 +42,4 @@ const seedDatabase = async ()=>{
 };
 
 seedDatabase();
-module.exports = { User, Recipes, Comments };
+module.exports = { User, Recipes, Comments, Category};
