@@ -12,19 +12,19 @@
 </head>
 
 <body>
-  <nav class="navbar is-transparent">
+  <nav class="">
     <div class="navbar-brand">
-      <a class="navbar-item" href="https://bulma.io">
+      <a class="navbar-item" href="">
         <p>Guilt Free Gourmet</p>
       </a>
-      <div class="navbar-burger" data-target="navbarExampleTransparentExample">
+      <!-- <div class="navbar-burger" data-target="navbarExampleTransparentExample">
         <span></span>
         <span></span>
         <span></span>
       </div>
-    </div>
+    </div> -->
   
-   
+    
       <div class=" navbar-end dropdown is-hoverable">
         <div class="dropdown-trigger">
           <button class="button" aria-haspopup="true" aria-controls="dropdown-menu4">
@@ -53,26 +53,55 @@
 @media (max-width: 768px) { .hero  { background: black url(/public/images/rawfoodonwood.jpg ) center / cover; } }</style>
   
   <section class="hero is-fullheight" >
-  
-  <!-- this is the body of the discover new recipe page -->
-    <div class="container">
-      <div class="is-justify-content-center is-align-content-center" id="intro-page">
-        <h2 class="text-center">Discover New Recipes</h2>
-        <div>
-            <!-- this is where we will put the spi in a container that scrolls -->
-        </div>
-          
+
+    <div>
+      <h2 class="text-center has-text-white">Welcome, {{name}}!</h2>
     </div>
+  
+ 
+  <div class="container">
+    <div class="is-justify-content-center is-align-content-center" id="intro-page">
+      <h2 class="">Discover New Recipes</h2>
+      <!-- this is where the recipes from the api will display in link formation-->
+      
+      
+      <div>
+        <input class="has-text-black" type="text" placeholder="Search Favorite" autofocus />
+            <button class="btn">Find</button>
+      </div>
+      {{#if recipes.length}}
+      <div>
+        {{#each recipes as |recipe|}}
+          <div >
+            <h4><a href="/recipe/{{recipe.id}}">{{recipe.name}}</a></h4>
+          </div>
+        {{/each}}
+      </div>
+      {{/if}}
+    </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="is-justify-content-center is-align-content-center" id="intro-page">
+      <h2>New Recipe</h2>
+      <div>
+        <h2>{{name}}</h2>
+        <p>{{{ingredients}}}</p>
+        <p>{{directions}}</p>
+        
+      </div>
+      <div class="">
+        <div class="control">
+          <button class="button is-link">Save</button>
+        </div>
       </div>
     </div>
+  </div>
 
-  
   <div>
-    <p class="text-center has-text-white">&copy; 2024 Guilt Free Gourmet</p>
- </div>
-
-
-  
+     <p class="text-center has-text-white">&copy; 2024 Guilt Free Gourmet</p>
+  </div>
 
 </body>
 </html>
