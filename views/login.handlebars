@@ -1,11 +1,53 @@
  <!-- this section below is for the log in body -->
 
-  <body id="main-body"> 
-    <div class="wrapper">
-       <header>
-         <h2 class="text-center is-size-5 text-amber-300  font-semibold">Welcome, {{name}}!</h2>
+  <div class="container">
+    <div class="is-justify-content-center is-align-content-center" id="intro-page">
+             <strong class="has-text-white">Sign Up</strong>
+       <div class="field">
+    <label class="label has-text-white">Username</label>
+    <div class="control has-icons-left has-icons-right">
+      <input class="input" id="nameLogin" type="text" placeholder="Text input" value="bulma">
+      <span class="icon is-small is-left">
+        <i class="fas fa-user"></i>
+      </span>
+      <span class="icon is-small is-right">
+        <i class="fas fa-check"></i>
+      </span>
+    </div>
 
-       </header>
+  </div>
+  
+  <div class="field">
+    <label class="label has-text-white">Email</label>
+    <div class="control has-icons-left has-icons-right">
+      <input class="input" type="email" id="loginEmail" placeholder="Email input" value="hello@">
+      <span class="icon is-small is-left">
+        <i class="fas fa-envelope"></i>
+      </span>
+      <span class="icon is-small is-right">
+        <i class="fas fa-exclamation-triangle"></i>
+      </span>
+    </div>
+  </div>
+  <div class="field">
+    <label class="label has-text-white">Password</label>
+    <p class="control has-icons-left">
+      <input class="input" type="password" id="loginPass" placeholder="Password">
+      <span class="icon is-small is-left">
+        <i class="fas fa-lock"></i>
+      </span>
+    </p>
+  </div>
+  <div class="field is-grouped">
+    <div class="control">
+      <button class="button is-success" id="signUpBtn">Submit</button>
+    </div>
+    <div class="control">
+      <button class="button is-link is-danger">Cancel</button>
+    </div>
+  </div>
+    </div>
+  </div>
 
        <section class="columns">
            <div class="column text-center" id="intro-page">
@@ -54,7 +96,7 @@
               </div>
               <div class="field is-grouped">
                 <div class="control">
-                  <button class="button is-success">Submit</button>
+                  <button class="button is-success" id="loginBtn">Submit</button>
                 </div>
                 <div class="control">
                   <button class="button is-link is-danger">Cancel</button>
