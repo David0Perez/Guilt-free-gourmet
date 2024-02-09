@@ -37,10 +37,14 @@
         <div class="dropdown-menu" id="dropdown-menu4" role="menu">
           <div class="dropdown-content">
             <div class="dropdown-item">
-                <ul>Log In</ul>
+              {{#if logged_in}}
                 <ul>My Profile</ul>
                 <ul>Explore Recipes</ul>
                 <ul>Log Out</ul>
+                <ul>Create Recipes</ul>
+                {{else}}
+                <ul>Log In</ul>
+                {{/if}}
           </div>
         </div>
     </div>
