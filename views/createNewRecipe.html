@@ -12,35 +12,35 @@
 </head>
 
 <body>
-  <nav class="navbar is-transparent">
+  <nav class=" bg-gradient-to-r from-lime-500 to-amber-500">
     <div class="navbar-brand">
-      <a class="navbar-item" href="https://bulma.io">
-        <p>Guilt Free Gourmet</p>
-      </a>
-      <div class="navbar-burger" data-target="navbarExampleTransparentExample">
+        <p class="font-bold text-2xl mx-5 my-2">Guilt Free Gourmet</p>
+      
+      <!-- <div class="navbar-burger" data-target="navbarExampleTransparentExample">
         <span></span>
         <span></span>
         <span></span>
       </div>
-    </div>
+    </div> -->
   
-   
-      <div class=" navbar-end dropdown is-hoverable">
+    
+      <div class="mr-6  mt-1.5 navbar-end dropdown is-hoverable menuBtn">
         <div class="dropdown-trigger">
-          <button class="button" aria-haspopup="true" aria-controls="dropdown-menu4">
+          <button class="button bg-amber-50 hover:bg-amber-100" >
             <p>Menu</p>
-            <span class="icon is-small">
-              <i class="fas fa-angle-down" aria-hidden="true"></i>
-            </span>
+            <!-- <span class="">
+              <i class="" aria-hidden="true"></i>
+            </span> -->
           </button>
         </div>
-        <div class="dropdown-menu" id="dropdown-menu4" role="menu">
-          <div class="dropdown-content">
-            <div class="dropdown-item">
-                <ul>Log In</ul>
-                <ul>My Profile</ul>
-                <ul>Explore Recipes</ul>
-                <ul>Log Out</ul>
+        <div class="dropdown-menu " id="dropdown-menu4" role="menu">
+          <div class="dropdown-content bg-amber-50 ">
+            <div class="dropdown-item hover text-medium">
+                <ul class="hover:text-lime-600">Explore Recipes</ul>
+                <ul class="hover:text-lime-600">Log In</ul>
+                <ul class="hover:text-lime-600">My Profile</ul>
+                <ul class="hover:text-lime-600">Create Recipe</ul>
+                <ul class="hover:text-red-600">Log Out</ul>
           </div>
         </div>
     </div>
@@ -54,46 +54,49 @@
   
   <section class="hero is-fullheight" >
 
-    <div>
-      <h2 class="text-center has-text-white">Welcome, {{name}}!</h2>
-    </div>
-  
-  <!-- this is the body of the create recipe page -->
-    <div class="container">
-      <div class="is-justify-content-center is-align-content-center" id="intro-page">
-        <h2 class="text-center">Create New Recipes</h2>
-      <div class="row mt-4">
-        <div class="col-md-6">
-          <form class="form new-recipe-form">
-            <div class="form-group">
-              <label for="recipe-name">Recipe Name:</label>
-              <input class="form-input has-text-black" type="text" id="recipe-name" name="recipe-name" />
-            </div>
-            <div></div>
-            <div class="form-group">
-              <label for="recipe-ingredients">Ingredients:</label>
-              <textarea class="form-input has-text-black" id="recipe-ingredients" name="recipe-ingridients"></textarea>
-            </div>
-            <div class="form-group">
-              <label for="recipe-directions">Directions:</label>
-              <textarea class="form-input has-text-black" id="recipe-directions" name="recipe-directions"></textarea>
-            </div>
-            <div class="form-group">
-              <button type="submit" class="btn btn-primary">Create</button>
-            </div>
-          </form>
-        </div>
-    </div>
-      </div>
-    </div>
 
   
-  <div>
-    <p class="text-center has-text-white">&copy; 2024 Guilt Free Gourmet</p>
- </div>
+  <!-- this section below is for the log in body -->
 
+  <body id="main-body"> 
+    <div class="wrapper">
+       <header>
+         <h2 class="text-center is-size-5 text-amber-300  font-semibold">Welcome, {{name}}!</h2>
 
-  
+       </header>
 
+       <section class="columns">
+          <div class="column text-center" id="intro-page">
+            <strong class="text-lime-500 is-size-5">Create New Recipe</strong>
+            <form class="form new-recipe-form">
+              <div class="form-group my-4">
+                <label for="recipe-name">Recipe Name:</label>
+                <input class="form-input has-text-black" type="text" id="recipe-name" name="recipe-name" />
+              </div>
+              <div></div>
+              <div class="form-group my-4">
+                <label for="recipe-ingredients">Ingredients:</label>
+                <textarea class="form-input has-text-black" id="recipe-ingredients" name="recipe-ingridients"></textarea>
+              </div>
+              <div class="form-group my-4">
+                <label for="recipe-direction">Directions:</label>
+                <textarea class="form-input has-text-black" id="recipe-directions" name="recipe-directions"></textarea>
+              </div>
+              <div class="form-group my-4">
+                <button class="button is-success has-text-black font-bold">Create</button>
+              </div>
+            </form>
+              
+               
+              </div>
+            </div> 
+           </div>
+           
+       </section>
+   </div>
+   <div>
+       <p class="text-center has-text-white">&copy; 2024 Guilt Free Gourmet</p>
+    </div>
+</section>
 </body>
 </html>

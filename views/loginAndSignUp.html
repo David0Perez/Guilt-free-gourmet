@@ -12,11 +12,10 @@
 </head>
 
 <body>
-  <nav class="">
+  <nav class=" bg-gradient-to-r from-lime-500 to-amber-500">
     <div class="navbar-brand">
-      <a class="navbar-item" href="">
-        <p>Guilt Free Gourmet</p>
-      </a>
+        <p class="font-bold text-2xl mx-5 my-2">Guilt Free Gourmet</p>
+      
       <!-- <div class="navbar-burger" data-target="navbarExampleTransparentExample">
         <span></span>
         <span></span>
@@ -25,22 +24,23 @@
     </div> -->
   
     
-      <div class=" navbar-end dropdown is-hoverable">
+      <div class="mr-6  mt-1.5 navbar-end dropdown is-hoverable menuBtn">
         <div class="dropdown-trigger">
-          <button class="button" aria-haspopup="true" aria-controls="dropdown-menu4">
+          <button class="button bg-amber-50 hover:bg-amber-100" >
             <p>Menu</p>
-            <span class="icon is-small">
-              <i class="fas fa-angle-down" aria-hidden="true"></i>
-            </span>
+            <!-- <span class="">
+              <i class="" aria-hidden="true"></i>
+            </span> -->
           </button>
         </div>
-        <div class="dropdown-menu" id="dropdown-menu4" role="menu">
-          <div class="dropdown-content">
-            <div class="dropdown-item">
-                <ul>Log In</ul>
-                <ul>My Profile</ul>
-                <ul>Explore Recipes</ul>
-                <ul>Log Out</ul>
+        <div class="dropdown-menu " id="dropdown-menu4" role="menu">
+          <div class="dropdown-content bg-amber-50 ">
+            <div class="dropdown-item hover text-medium">
+                <ul class="hover:text-lime-600">Explore Recipes</ul>
+                <ul class="hover:text-lime-600">Log In</ul>
+                <ul class="hover:text-lime-600">My Profile</ul>
+                <ul class="hover:text-lime-600">Create Recipe</ul>
+                <ul class="hover:text-red-600">Log Out</ul>
           </div>
         </div>
     </div>
@@ -58,99 +58,74 @@
   
   <!-- this section below is for the log in body -->
 
-  <div class="container">
-    <div class="is-justify-content-center is-align-content-center" id="intro-page">
-             <strong class="has-text-white">Sign Up</strong>
-       <div class="field">
-    <label class="label has-text-white">Username</label>
-    <div class="control has-icons-left has-icons-right">
-      <input class="input" type="text" placeholder="Text input" value="bulma">
-      <span class="icon is-small is-left">
-        <i class="fas fa-user"></i>
-      </span>
-      <span class="icon is-small is-right">
-        <i class="fas fa-check"></i>
-      </span>
-    </div>
+  <body id="main-body"> 
+    <div class="wrapper">
+       <header>
+         <h2 class="text-center is-size-5 text-amber-300  font-semibold">Welcome, {{name}}!</h2>
 
-  </div>
-  
-  <div class="field">
-    <label class="label has-text-white">Email</label>
-    <div class="control has-icons-left has-icons-right">
-      <input class="input" type="email" placeholder="Email input" value="hello@">
-      <span class="icon is-small is-left">
-        <i class="fas fa-envelope"></i>
-      </span>
-      <span class="icon is-small is-right">
-        <i class="fas fa-exclamation-triangle"></i>
-      </span>
-    </div>
-  </div>
-  <div class="field">
-    <label class="label has-text-white">Password</label>
-    <p class="control has-icons-left">
-      <input class="input" type="password" placeholder="Password">
-      <span class="icon is-small is-left">
-        <i class="fas fa-lock"></i>
-      </span>
-    </p>
-  </div>
-  <div class="field is-grouped">
-    <div class="control">
-      <button class="button is-success">Submit</button>
-    </div>
-    <div class="control">
-      <button class="button is-link is-danger">Cancel</button>
-    </div>
-  </div>
-    </div>
-  </div>
+       </header>
 
- 
+       <section class="columns">
+           <div class="column text-center" id="intro-page">
+            <strong class="text-lime-500 is-size-5">Sign Up</strong>
+             <!-- // Name Input -->
+             <div class="field">
+              <label class="label has-text-white my-4">Name</label>
+              <div>
+                <input class="input" type="text" placeholder="Name">
+              </div>
+            </div> 
+            <div class="field">
+              <label class="label has-text-white my-4">Email</label>
+              <div>
+                <input class="input" type="email" placeholder="Email ">
+              </div>
+              <div class="field">
+                <label class="label has-text-white my-4">Password</label>
+                  <input class="input" type="password" placeholder="Password">
+              </div>
+              <div class="field is-grouped">
+                <div class="control">
+                  <button class="button is-success">Submit</button>
+                </div>
+                <div class="control">
+                  <button class="button is-link is-danger">Cancel</button>
+                </div>
+              </div>
+            </div> 
+           </div>
 
-  <div class="container">
-    <div class="is-justify-content-center is-align-content-center" id="intro-page">
 
-     <strong class="has-text-white">Log In</strong>
-  
-  
-  <div class="field">
-    <label class="label has-text-white">Email</label>
-    <div class="control has-icons-left has-icons-right">
-      <input class="input" type="email" placeholder="Email input" value="hello@">
-      <span class="icon is-small is-left">
-        <i class="fas fa-envelope"></i>
-      </span>
-      <span class="icon is-small is-right">
-        <i class="fas fa-exclamation-triangle"></i>
-      </span>
+
+
+           <div class="column text-center" id="intro-page">
+            <strong class="text-lime-500 is-size-5">Log In</strong>
+             <!-- // Name Input -->
+            <div class="field">
+              <label class="label has-text-white my-4">Email</label>
+              <div>
+                <input class="input" type="email" placeholder="Email ">
+              </div>
+              <div class="field">
+                <label class="label has-text-white my-4">Password</label>
+                  <input class="input" type="password" placeholder="Password">
+              </div>
+              <div class="field is-grouped">
+                <div class="control">
+                  <button class="button is-success">Submit</button>
+                </div>
+                <div class="control">
+                  <button class="button is-link is-danger">Cancel</button>
+                </div>
+              </div>
+            </div> 
+           </div>
+           
+       </section>
+   </div>
+   <div>
+       <p class="text-center has-text-white">&copy; 2024 Guilt Free Gourmet</p>
     </div>
-  </div>
-  <div class="field">
-    <label class="label has-text-white">Password</label>
-    <p class="control has-icons-left">
-      <input class="input" type="password" placeholder="Password">
-      <span class="icon is-small is-left">
-        <i class="fas fa-lock"></i>
-      </span>
-    </p>
-  </div>
-  
-  
- 
-  
-  <div class="field is-grouped">
-    <div class="control">
-      <button class="button is-success">Submit</button>
-    </div>
-    <div class="control">
-      <button class="button is-link is-danger">Cancel</button>
-    </div>
-  </div>
- 
-
-  
-
+</section>
 </body>
 </html>
