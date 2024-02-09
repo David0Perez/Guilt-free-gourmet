@@ -12,3 +12,9 @@ Database is going to be returned by either external and locally ways:
 5. See a future implementation => Upload a picture from the user?
 Or another website functionality.
 6. ASK about Array dataType on the list of nutrients. 
+
+7. MAKE sure to have the scripts for public/js files in handlebars files.
+8. Check on the links and routes in handlebars for user interaction => Login and menu buttons, blablabla
+9. Handlebars structure => Profile section :
+9.1 Favorites recipes => The ones that were saved in the third party api
+9.2 
