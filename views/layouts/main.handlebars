@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-  <link rel="stylesheet" href="/public/css/">
-  <link rel="stylesheet" href="/public/css/styles.css">
-  <link rel="stylesheet" href="/public/js/jass.css">
+  <link rel="stylesheet" href="/css/helpers.css">
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="/js/jass.css">
   <script src="https://cdn.tailwindcss.com"></script>
   <title>Guilt Free Gourmet</title>
 </head>
@@ -37,10 +37,11 @@
         <div class="dropdown-menu" id="dropdown-menu4" role="menu">
           <div class="dropdown-content">
             <div class="dropdown-item">
-                <ul>Log In</ul>
-                <ul>My Profile</ul>
-                <ul>Explore Recipes</ul>
-                <ul>Log Out</ul>
+                <ul><a href="/login">Log In</a></ul>
+                {{!-- Try to apply a IF statement => If user is logged in show the profile, if not the route will be to log in  --}}
+                <ul><a href="/userprofile">My Profile</a></ul>
+                <ul><a href="/discoverRecipes">Explore Recipes</a></ul>
+                <ul><a href="/">Log Out</a></ul>
           </div>
         </div>
     </div>
@@ -50,7 +51,7 @@
     background: black url(/public/images/rawfoodonwood.jpg) center / cover;
 }
 @media (max-width: 1024px) { .hero  { background:  black url(/public/images/rawfoodonwood.jpg) center / cover; } }
-@media (max-width: 768px) { .hero  { background: black url(/public/images/rawfoodonwood.jpg ) center / cover; } }</style>
+@media (max-width: 768px) { .hero  { background: black url(/public/images/rawfoodonwood.jpg) center / cover; } }</style>
   
   <section class="hero is-fullheight" >
 <body id="main-body"> 

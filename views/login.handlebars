@@ -1,98 +1,53 @@
- <!-- this section below is for the log in body -->
+<div class="wrapper">
+       <header>
+         <h2 class="text-center is-size-5 text-amber-300  font-semibold">Welcome, {{name}}!</h2>
 
-  <div class="container">
-    <div class="is-justify-content-center is-align-content-center" id="intro-page">
-             <strong class="has-text-white">Sign Up</strong>
-       <div class="field">
-    <label class="label has-text-white">Username</label>
-    <div class="control has-icons-left has-icons-right">
-      <input class="input" id="nameLogin" type="text" placeholder="Text input" value="bulma">
-      <span class="icon is-small is-left">
-        <i class="fas fa-user"></i>
-      </span>
-      <span class="icon is-small is-right">
-        <i class="fas fa-check"></i>
-      </span>
-    </div>
-
-  </div>
-  
-  <div class="field">
-    <label class="label has-text-white">Email</label>
-    <div class="control has-icons-left has-icons-right">
-      <input class="input" type="email" id="loginEmail" placeholder="Email input" value="hello@">
-      <span class="icon is-small is-left">
-        <i class="fas fa-envelope"></i>
-      </span>
-      <span class="icon is-small is-right">
-        <i class="fas fa-exclamation-triangle"></i>
-      </span>
-    </div>
-  </div>
-  <div class="field">
-    <label class="label has-text-white">Password</label>
-    <p class="control has-icons-left">
-      <input class="input" type="password" id="loginPass" placeholder="Password">
-      <span class="icon is-small is-left">
-        <i class="fas fa-lock"></i>
-      </span>
-    </p>
-  </div>
-  <div class="field is-grouped">
-    <div class="control">
-      <button class="button is-success" id="signUpBtn">Submit</button>
-    </div>
-    <div class="control">
-      <button class="button is-link is-danger">Cancel</button>
-    </div>
-  </div>
-    </div>
-  </div>
+       </header>
 
        <section class="columns">
-           <div class="column text-center" id="intro-page">
+           <form class="form column text-center signUpForm" id="intro-page">
             <strong class="text-lime-500 is-size-5">Sign Up</strong>
              <!-- // Name Input -->
              <div class="field">
               <label class="label has-text-white my-4">Name</label>
               <div>
-                <input class="input" type="text" placeholder="Name">
+                <input class="input" type="text" placeholder="Name" id="nameLogin">
               </div>
             </div> 
             <div class="field">
               <label class="label has-text-white my-4">Email</label>
               <div>
-                <input class="input" type="email" placeholder="Email ">
+                <input class="input" type="email" placeholder="Email " id="signUpEmail">
               </div>
               <div class="field">
                 <label class="label has-text-white my-4">Password</label>
-                  <input class="input" type="password" placeholder="Password">
+                  <input class="input" type="password" placeholder="Password" id="signUpPass">
               </div>
               <div class="field is-grouped">
                 <div class="control">
-                  <button class="button is-success">Submit</button>
+                  <button class="button is-success" id="signUpBtn">Submit</button>
                 </div>
                 <div class="control">
                   <button class="button is-link is-danger">Cancel</button>
                 </div>
               </div>
             </div> 
-           </div>
+           </form>
 
 
 
 
-           <div class="column text-center" id="intro-page">
+           <form class="form column text-center logInForm" id="intro-page-1">
             <strong class="text-lime-500 is-size-5">Log In</strong>
              <!-- // Name Input -->
             <div class="field">
               <label class="label has-text-white my-4">Email</label>
               <div>
-                <input class="input" type="email" placeholder="Email ">
+                <input class="input" type="email" placeholder="Email " id="loginEmail">
               </div>
               <div class="field">
                 <label class="label has-text-white my-4">Password</label>
-                  <input class="input" type="password" placeholder="Password">
+                  <input class="input" type="password" placeholder="Password" id="loginPass">
               </div>
               <div class="field is-grouped">
                 <div class="control">
@@ -103,15 +58,11 @@
                 </div>
               </div>
             </div> 
-           </div>
+           </form>
            
        </section>
+       <script src="./js/login.js"></script>
    </div>
    <div>
        <p class="text-center has-text-white">&copy; 2024 Guilt Free Gourmet</p>
     </div>
-</section>
-
-<script src="../public/js/login.js"></script>
-</body>
-</html>

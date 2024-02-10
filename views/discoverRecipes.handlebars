@@ -1,52 +1,48 @@
-<style>.hero {
-    background: black url(/public/images/rawfoodonwood.jpg) center / cover;
-}
-@media (max-width: 1024px) { .hero  { background:  black url(/public/images/rawfoodonwood.jpg) center / cover; } }
-@media (max-width: 768px) { .hero  { background: black url(/public/images/rawfoodonwood.jpg ) center / cover; } }</style>
-  
-  <section class="hero is-fullheight" >
+<div class="wrapper">
+        <header>
+          <h2 class="text-center is-size-5 text-amber-300  font-semibold">Welcome, {{name}}!</h2>
 
-    <div>
-      <h2 class="text-center has-text-white">Welcome, {{name}}!</h2>
-    </div>
-  
- 
-  <div class="container">
-    <div class="is-justify-content-center is-align-content-center" id="intro-page">
-      <h2 class="">Discover New Recipes</h2>
-      <!-- this is where the recipes from the api will display in link formation-->
-      
-      
-      <div>
-        <input class="has-text-black" type="text" placeholder="Search Favorite" autofocus />
-            <button class="btn">Find</button>
-      </div>
-      {{#if recipes.length}}
-      <div>
-        {{#each recipes as |recipe|}}
-          <div >
-            <h4><a href="/recipe/{{recipe.id}}">{{recipe.name}}</a></h4>
-          </div>
-        {{/each}}
-      </div>
-      {{/if}}
-    </div>
-    </div>
-  </div>
+        </header>
 
-  <div class="container">
-    <div class="is-justify-content-center is-align-content-center" id="intro-page">
-      <h2>New Recipe</h2>
-      <div>
-        <h2>{{name}}</h2>
-        <p>{{{ingredients}}}</p>
-        <p>{{directions}}</p>
+        <section class="columns">
+            <div class="column text-center" id="intro-page">
+                <h2 class="is-size-5 my-5 text-lime-500 font-medium">Discover New Recipe</h2>
+                <div>
+                  <input class="has-text-black" type="text" placeholder="Search Favorite" autofocus />
+                      <button class="button is-small btn bg-amber-100 has-text-black font-bold my-4" id="findBtn">Find</button>
+                </div>
+                <div class="div4scroll">
+                  <!-- change the info below from our user database to the api info -->
+                 <ul>
+                  {{#if recipes.length}}
+                  {{#each recipes as |recipe|}}
+                  <li><a href="/recipe/{{recipe.id}}">{{recipe.name}}</a></li>
+                  {{/each}}
+                  {{/if}}
+                 </ul>
+                </div>
+            </div>
+            {{!-- This one is not the same than the Create Recipe file? --}}
+            <div class="column text-center" id="intro-page-1">
+                <h2 class="is-size-5 my-5 text-red-300 font-medium">New Recipe</h2>
+                <div class="div4scroll">
+                <!-- change the info below from our user database to the api info -->
+                  <h2 class="text-center is-size-5 my-5">{{name}}</h2>
+                  <p class="my-4">{{{ingredients}}}</p>
+                  <p class="my-4">{{directions}}</p>   
+                </div>
+                <div class="">
+                  <div class="control">
+                    <button class="button is-link">Save</button>
+                  </div>
+                </div>
+              </div>  
+              </div>
+                 
+        </section>
         
-      </div>
-      <div class="">
-        <div class="control">
-          <button class="button is-link">Save</button>
-        </div>
-      </div>
     </div>
-  </div>
+    <div>
+        <p class="text-center has-text-white">&copy; 2024 Guilt Free Gourmet</p>
+     </div>
+</section>

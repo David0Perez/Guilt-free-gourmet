@@ -32,6 +32,7 @@ router.get('/', async (req, res) =>{
     }
 });
 
+//Single recipe Card
 router.get('/recipe/:id', async (req, res)=>{
     try{
         const recipeData = await Recipes.findByPk(req.params.id, {
@@ -55,19 +56,19 @@ router.get('/recipe/:id', async (req, res)=>{
 });
 
 // GET all comments and JOIN with => User data or Recipe data ?
-router.get('/', async (req, res)=>{
+router.get('/discoverRecipes', async (req, res)=>{
     try{
         const commentData = await Comments.findAll({
             include: [
                 {
                     //Ask the model => User or Recipe
-                    model: User,
-                    attributes: ['username'],
+                    model: Recipes,
+                    attributes: ['recipe_name'],
                 },
             ],
         });
 
-        //Serialize data => Easier way to read it.
+        // //Serialize data => Easier way to read it.
         const comments = commentData.map((comment) => comment.get({ plain: true }));
 
         //Pass serialize data and session into template
@@ -80,30 +81,9 @@ router.get('/', async (req, res)=>{
     }
 });
 
-// GET comments by id
-router.get('/comment/:id', async (req, res)=>{
-    try{
-        const commentData = await Comments.findByPk(req.params.id, {
-            include: [
-                {
-                    model: User,
-                    attributes: ['username'],
-                },
-            ],
-        });
-
-        const comment = commentData.get({ plain: true });
-        res.render('comment', {
-            ...comment,
-            logged_in: req.session.logged_in
-        });
-    }catch(err){
-        res.status(500).json(err);
-    }
-});
 
 //Use withAuth middleware to prevent access to route
-router.get('/profile', withAuth, async (req, res)=>{
+    router.get('/profile', withAuth, async (req, res)=>{
     try{
         //find the logged in user based on the session ID.
         const userData = await User.findByPk(req.session.user_id, {
@@ -114,7 +94,7 @@ router.get('/profile', withAuth, async (req, res)=>{
 
         const user = userData.get({ plain: true });
 
-        res.render('profile', {
+        res.render('userprofile', {
             ...user,
             logged_in: true
         });
@@ -133,7 +113,14 @@ router.get('/login', (req, res)=>{
     res.render('login');
 });
 
+router.get('/createRecipe', (req, res)=>{
+   //need to add with auth
+
+    res.render('createRecipe');
+});
 module.exports = router;
+
+
 
 
 
