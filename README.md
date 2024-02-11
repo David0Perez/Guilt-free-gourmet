@@ -1,20 +1,54 @@
 # Guilt-free-gourmet
 
-Database is going to be returned by either external and locally ways:
-1. API external request to Edamam 
-2. Once the user saves the recipe from that external API => It will be stored locally and able to modify it in order to create his own recipe.
+# Guilt-Free Gourmet Application
 
-## TO DO
-1. Test that all data is being properly seeded in sequelize. => Check on associations for category and recipe tables.
-2. Test that routes are working properly.
-3. POST and DELETE methods are working right? => Add comments and recipes.
-4. Start working on the external API request. => Edamam.
-5. See a future implementation => Upload a picture from the user?
-Or another website functionality.
-6. ASK about Array dataType on the list of nutrients. 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-7. MAKE sure to have the scripts for public/js files in handlebars files.
-8. Check on the links and routes in handlebars for user interaction => Login and menu buttons, blablabla
-9. Handlebars structure => Profile section :
-9.1 Favorites recipes => The ones that were saved in the third party api
-9.2 
+## Description
+Here's going to be the Description of the Application.
+
+## Table of Contents
+- [The Challenge](#Challenges-Faced)
+- [Usage Information](#Usage-Information)
+- [Installation Process](#Installation-Process)
+- [Built With](#Built-With)
+- [License](#License)
+- [Authors](#Authors)
+
+## Challenges Faced
+All challenges that we've faced during the process.
+
+## User Story
+
+```md
+```
+
+## Acceptance Criteria
+
+```md
+```
+
+## Usage Information
+What the purpose of the application is
+
+## Installation Process
+How to run the application?
+
+## Built With
+Technologies Used
+
+## License
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+## Authors
+ - Dowling, Blair.
+ - Angulo, Maria.
+ - Perez, David.
+ - Kelly, Troy.
+
+## TO DO => Routes are working properly 
+1. externalRoutes and favorites folders => Check on the API and requested values.
+2. SignUp Form and LoginForm need to be tested => Event Listener for button or form?
+3. Having that done => Comments and recipes created by the user test with Insomnia.
+4. Check on the CSS for transparency styles.
+5. PLUS => If everything is working, check on categories.

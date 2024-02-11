@@ -37,10 +37,11 @@
         <div class="dropdown-menu" id="dropdown-menu4" role="menu">
           <div class="dropdown-content">
             <div class="dropdown-item">
-                <ul>Log In</ul>
-                <ul>My Profile</ul>
-                <ul>Explore Recipes</ul>
-                <ul>Log Out</ul>
+                <ul><a href="/login">Log In</a></ul>
+                {{!-- Try to apply a IF statement => If user is logged in show the profile, if not the route will be to log in  --}}
+                <ul><a href="/userprofile">My Profile</a></ul>
+                <ul><a href="/discoverRecipes">Explore Recipes</a></ul>
+                <ul><a href="/">Log Out</a></ul>
           </div>
         </div>
     </div>
@@ -50,7 +51,7 @@
     background: black url(/images/rawfoodonwood.jpg) center / cover;
 }
 @media (max-width: 1024px) { .hero  { background:  black url(/images/rawfoodonwood.jpg) center / cover; } }
-@media (max-width: 768px) { .hero  { background: black url(/images/rawfoodonwood.jpg ) center / cover; } }</style>
+@media (max-width: 768px) { .hero  { background: black url(/images/rawfoodonwood.jpg) center / cover; } }</style>
   
   <section class="hero is-fullheight" >
 <body id="main-body"> 
@@ -64,4 +65,8 @@
         <p class="text-center has-text-white">&copy; 2024 Guilt Free Gourmet</p>
      </div>
 </footer>
+
+{{#if logged_in}}
+  <script src="../../public/js/logout.js"></script>
+  {{/if}}
 </html>

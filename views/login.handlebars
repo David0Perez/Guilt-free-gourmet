@@ -5,49 +5,49 @@
        </header>
 
        <section class="columns">
-           <div class="column text-center" id="intro-page">
+           <form class="form column text-center signUpForm" id="intro-page">
             <strong class="text-lime-500 is-size-5">Sign Up</strong>
              <!-- // Name Input -->
              <div class="field">
               <label class="label has-text-white my-4">Name</label>
               <div>
-                <input class="input" type="text" placeholder="Name">
+                <input class="input" type="text" placeholder="Name" id="nameLogin">
               </div>
             </div> 
             <div class="field">
               <label class="label has-text-white my-4">Email</label>
               <div>
-                <input class="input" type="email" placeholder="Email ">
+                <input class="input" type="email" placeholder="Email " id="signUpEmail">
               </div>
               <div class="field">
                 <label class="label has-text-white my-4">Password</label>
-                  <input class="input" type="password" placeholder="Password">
+                  <input class="input" type="password" placeholder="Password" id="signUpPass">
               </div>
               <div class="field is-grouped">
                 <div class="control">
-                  <button class="button is-success">Submit</button>
+                  <button class="button is-success" id="signUpBtn">Submit</button>
                 </div>
                 <div class="control">
                   <button class="button is-link is-danger">Cancel</button>
                 </div>
               </div>
             </div> 
-           </div>
+           </form>
 
 
 
 
-           <div class="column text-center" id="intro-page">
+           <form class="form column text-center logInForm" id="intro-page-1">
             <strong class="text-lime-500 is-size-5">Log In</strong>
              <!-- // Name Input -->
             <div class="field">
               <label class="label has-text-white my-4">Email</label>
               <div>
-                <input class="input" type="email" placeholder="Email ">
+                <input class="input" type="email" placeholder="Email " id="loginEmail">
               </div>
               <div class="field">
                 <label class="label has-text-white my-4">Password</label>
-                  <input class="input" type="password" placeholder="Password">
+                  <input class="input" type="password" placeholder="Password" id="loginPass">
               </div>
               <div class="field is-grouped">
                 <div class="control">
@@ -58,11 +58,11 @@
                 </div>
               </div>
             </div> 
-           </div>
+           </form>
            
        </section>
+       <script src="./js/login.js"></script>
    </div>
    <div>
        <p class="text-center has-text-white">&copy; 2024 Guilt Free Gourmet</p>
     </div>
-</section>

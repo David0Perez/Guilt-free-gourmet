@@ -1,6 +1,18 @@
 [
     {
         "id": 1,
-        "category_name": "Meat"
+        "category_name": "Breakfast"
+    },
+    {
+        "id": 2,
+        "category_name": "Lunch"
+    },
+    {
+        "id": 3,
+        "category_name": "Dinner"
+    },
+    {
+        "id": 4,
+        "category_name": "Out of Diet"
     }
 ]

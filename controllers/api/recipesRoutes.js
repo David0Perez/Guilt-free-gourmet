@@ -4,18 +4,18 @@ const router = require('express').Router();
 const { Recipes } = require('../../models');
 const withAuth = require('../../utils/auth');
 
-router.post('/', withAuth, async (req, res)=>{
     //create a new Recipe
-    try{
-        const newRecipe = await Recipes.create({
-            ...req.body,
-            user_id: req.session.user_id,
-        });
-    
-        res.status(200).json(newRecipe);
-    }catch(err){
-        res.status(400).json(err);
-    }
+router.post('/', withAuth, async (req, res)=>{
+        try{
+            const newRecipe = await Recipes.create({
+                ...req.body,
+                user_id: req.session.user_id,
+            });
+        
+            res.status(200).json(newRecipe);
+        }catch(err){
+            res.status(400).json(err);
+        }
 });
 
 router.delete('/:id', withAuth, async(req, res)=>{
