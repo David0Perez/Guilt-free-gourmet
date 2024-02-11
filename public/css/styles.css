@@ -3,21 +3,14 @@
     width: 200px;
     height: 200px;
     overflow-y: auto;
-    margin-bottom: ;
+    /* margin-bottom: ; */
     flex-shrink: inherit;
   
 }
-  
-
-
-
-
-
-
 
 #intro-page {
     background-color: #000000; 
-    opacity: .1; 
+    opacity: .8; 
     color: white; 
     padding: 10px; border-radius: 10px;
     justify-items: center;
