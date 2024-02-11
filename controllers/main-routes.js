@@ -32,6 +32,7 @@ router.get('/', async (req, res) =>{
     }
 });
 
+//Single recipe Card
 router.get('/recipe/:id', async (req, res)=>{
     try{
         const recipeData = await Recipes.findByPk(req.params.id, {
@@ -57,22 +58,22 @@ router.get('/recipe/:id', async (req, res)=>{
 // GET all comments and JOIN with => User data or Recipe data ?
 router.get('/discoverRecipes', async (req, res)=>{
     try{
-        // const commentData = await Comments.findAll({
-        //     include: [
-        //         {
-        //             //Ask the model => User or Recipe
-        //             model: User,
-        //             attributes: ['username'],
-        //         },
-        //     ],
-        // });
+        const commentData = await Comments.findAll({
+            include: [
+                {
+                    //Ask the model => User or Recipe
+                    model: Recipes,
+                    attributes: ['recipe_name'],
+                },
+            ],
+        });
 
         // //Serialize data => Easier way to read it.
-        // const comments = commentData.map((comment) => comment.get({ plain: true }));
+        const comments = commentData.map((comment) => comment.get({ plain: true }));
 
         //Pass serialize data and session into template
         res.render('discoverRecipes', {
-            // comments,
+            comments,
             logged_in: req.session.logged_in
         });
     }catch(err){
@@ -82,20 +83,19 @@ router.get('/discoverRecipes', async (req, res)=>{
 
 
 //Use withAuth middleware to prevent access to route
-// router.get('/profile', withAuth, async (req, res)=>{
-    router.get('/profile', async (req, res)=>{
+    router.get('/profile', withAuth, async (req, res)=>{
     try{
         //find the logged in user based on the session ID.
-        // const userData = await User.findByPk(req.session.user_id, {
-        //     attributes: { exclude: ['password']},
-        //     // Comments model as well?
-        //     include: [{ model: Recipes }],
-        // });
+        const userData = await User.findByPk(req.session.user_id, {
+            attributes: { exclude: ['password']},
+            // Comments model as well?
+            include: [{ model: Recipes }],
+        });
 
-        // const user = userData.get({ plain: true });
+        const user = userData.get({ plain: true });
 
         res.render('userprofile', {
-            // ...user,
+            ...user,
             logged_in: true
         });
     }catch(err){

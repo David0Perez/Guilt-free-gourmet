@@ -30,8 +30,8 @@ const signUpForm = async (e) =>{
     e.preventDefault();
 
     const name = document.querySelector('#nameLogin').value.trim();
-    const email = document.querySelector('#loginEmail').value.trim();
-    const password = document.querySelector('#loginPass').value.trim();
+    const email = document.querySelector('#signUpEmail').value.trim();
+    const password = document.querySelector('#signUpPass').value.trim();
 
     //Conditional for values entered of each one
     if(email && password && name){
@@ -51,5 +51,5 @@ const signUpForm = async (e) =>{
 };
 
 //We call for both functions and assign a submit event on the buttons.
-document.querySelector('#signUpBtn').addEventListener('submit', signUpForm);
-document.querySelector('#loginBtn').addEventListener('submit', loginFormHandler);
+document.querySelector('.signUpForm').addEventListener('submit', signUpForm);
+document.querySelector('.logInForm').addEventListener('submit', loginFormHandler);
