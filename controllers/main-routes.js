@@ -3,8 +3,6 @@ const { User, Recipes, Comments } = require('../models');
 // Import Authentification middleware
 const withAuth = require('../utils/auth');
 
-//GET all recipes from an external API => Edamam 
-
 // Once data is grabbed from the API => Recipes will be locally stored in the database, as well as the ones created.
 router.get('/', async (req, res) =>{
     try{
@@ -55,8 +53,17 @@ router.get('/recipe/:id', async (req, res)=>{
     }
 });
 
+//If the user is not logged in => Can not have access to discover recipes
+router.get('/discoverRecipes', async (req, res)=>{
+    if(req.session.logged_in){
+        res.redirect('/discoverRecipes');
+        return;
+    }
+})
+
 // GET all comments and JOIN with => User data or Recipe data ?
 router.get('/discoverRecipes', async (req, res)=>{
+   
     try{
         const commentData = await Comments.findAll({
             include: [
