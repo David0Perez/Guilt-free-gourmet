@@ -6,6 +6,7 @@ router.post('/', async (req, res) =>{
     let apiKey = '1992a8d8dcc021eb8c707c160456026c';
 
     try{
+        //that q = user input when search
        const apiData =  await fetch(`https://api.edamam.com/api/recipes/v2?type=public&app_id=${APP_ID}&app_key=${apiKey}&q=salad`);
        const apiJSON = await apiData.json();
 
