@@ -19,7 +19,7 @@ const newRecipeForm = async (e) =>{
         });
 
         if(response.ok){
-            document.location.replace('/userProfile');
+            alert('Recipe Created! Go to your profile.')
         }else{
             alert('The Recipe couldn`t be created');
         }
