@@ -1,10 +1,11 @@
-<div class="wrapper">
+div class="wrapper">
         <header>
-          <h2 class="text-center is-size-5 text-amber-300  font-semibold">Welcome, {{username}}!</h2>
+          <h2 class="text-center is-size-5 text-amber-300  font-semibold">Welcome, {{name}}!</h2>
 
         </header>
 
-  <section class="columns">
+        <section class="columns">
+          <section class="columns">
             <div class="column text-center" id="intro-page">
                 <h2 class="is-size-5 my-5 text-lime-500 font-medium">My Recipes</h2>
                 <div>
@@ -23,7 +24,41 @@
             </div> 
         </section>
 
-  
+
+
+
+        <section class="columns">
+          <div class="column text-center" id="intro-page">
+            <strong class="text-red-500 is-size-5">Create New Recipe</strong>
+            <form class="form new-recipe-form">
+              <div class="form-group my-4">
+                <label for="recipe-name">Recipe Name:</label>
+                <input class="form-input has-text-black" type="text" id="recipe-name" name="recipe-name" />
+              </div>
+              <div></div>
+              <div class="form-group my-4">
+                <label for="recipe-ingredients">Ingredients:</label>
+                <textarea class="form-input has-text-black" id="recipe-ingredients" name="recipe-ingridients"></textarea>
+              </div>
+              <div class="form-group my-4">
+                <label for="recipe-direction">Directions:</label>
+                <textarea class="form-input has-text-black" id="recipe-directions" name="recipe-directions"></textarea>
+              </div>
+              <div class="form-group my-4">
+                <button class="button is-success has-text-black font-bold">Create</button>
+              </div>
+            </form>
+              
+               
+              </div>
+            </div> 
+           </div>
+           
+       </section>
+          
+      </section>
     </div>
-  </div>
- </section>
+    <div>
+        <p class="text-center has-text-white">&copy; 2024 Guilt Free Gourmet</p>
+     </div>
+</section>

@@ -54,16 +54,14 @@ router.get('/recipe/:id', async (req, res)=>{
 });
 
 //If the user is not logged in => Can not have access to discover recipes
-router.get('/discoverRecipes', async (req, res)=>{
-    if(req.session.logged_in){
-        res.redirect('/discoverRecipes');
-        return;
-    }
-})
 
 // GET all comments and JOIN with => User data or Recipe data ?
 router.get('/discoverRecipes', async (req, res)=>{
    
+    if(!req.session.logged_in){
+        res.redirect('/login');
+        return;
+    }
     try{
         const commentData = await Comments.findAll({
             include: [
