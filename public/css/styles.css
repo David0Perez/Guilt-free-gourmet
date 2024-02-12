@@ -64,20 +64,17 @@ header {
     flex: 1;
     border: 1px solid #666;
     margin: 2px;
-    padding: 10px;
-    background: pink;
+    padding: 10px
     transition: 0.3s;
 
 }
 
 .column:first-child {
     margin-left: 0;
-    background: blue;
 }
 
 .column:last-child {
-    margin-left: 0;
-    background: yellow;  
+    margin-left: 0;    
 }
 
 @media screen and (max-width: 980px) {
