@@ -1,6 +1,6 @@
 const router = require('express').Router();
 
-router.get('/', async (req, res) =>{
+router.post('/', async (req, res) =>{
     //Third party API request
     let APP_ID = '526060cb';
     let apiKey = '1992a8d8dcc021eb8c707c160456026c';

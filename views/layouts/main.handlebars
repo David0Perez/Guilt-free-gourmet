@@ -39,9 +39,9 @@
             <div class="dropdown-item">
                 <ul><a href="/login">Log In</a></ul>
                 {{!-- Try to apply a IF statement => If user is logged in show the profile, if not the route will be to log in  --}}
-                <ul><a href="/userprofile">My Profile</a></ul>
+                <ul><a href="/profile">My Profile</a></ul>
                 <ul><a href="/discoverRecipes">Explore Recipes</a></ul>
-                <ul><a href="/">Log Out</a></ul>
+                <ul><a href="/" id="logout">Log Out</a></ul>
           </div>
         </div>
     </div>
@@ -67,6 +67,6 @@
 </footer>
 
 {{#if logged_in}}
-  <script src="../../public/js/logout.js"></script>
+  <script src="/js/logout.js"></script>
   {{/if}}
 </html>

@@ -1,8 +1,40 @@
 // JS logic to display favorites section once the user saves their recipes => Will be stored in his profile.
+
+// We grab the value => SearchRecipe fn with a fetch method of GET
+const searchRecipes = async (e) =>{
+    e.preventDefault();
+
+    //These values instead of being document.querySelector will be the property path from the API?
+    const recipeName = document.querySelector('#findRecipe').value.trim();
+    // const recipeIngredients = document.querySelector('#');
+    // const recipeDescription = document.querySelector('#');
+
+    if(recipeName){
+        const response = await fetch('/api/externalAPI', {
+            method: 'POST',
+            body: JSON.stringify({ recipeName }),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+
+        if(response.ok){
+            //Or a sweet alert saying that the recipe has been saved.
+            const dataResponse = await response.json();
+            console.log(dataResponse)
+        }else{
+            alert('No recipe Found.')
+        }
+    };
+
+    displayRecipes();
+};
+
 //Display function => Creating elements to display it on screen.
 
 const displayRecipes = async (data) =>{
-    //These data will be grabbed from the API request
+    //These data will be grabbed from the API request => property path
+            // For loop to iterate each recipe grabbed from the external API => They will be displayed on userProfile too
     document.querySelector('#intro-page').innerHTML = `
     <div class= "column is-3 card">
         <div class="card-image">
@@ -18,39 +50,11 @@ const displayRecipes = async (data) =>{
     //Recipe description will be the url of recipe's directions grabbed from the API.
 }
 
-// We grab the value => SearchRecipe fn with a fetch method of GET
-const searchRecipes = async (e) =>{
-    e.preventDefault();
-
-    //These values instead of being document.querySelector will be the property path from the API?
-    const recipeName = document.querySelector('#');
-    const recipeIngredients = document.querySelector('#');
-    const recipeDescription = document.querySelector('#');
-
-    if(recipeName && recipeIngredients && recipeDescription){
-        const response = await fetch('/api/externalRoutes', {
-            method: 'GET',
-            body: JSON.stringify({ recipeName, recipeIngredients, recipeDescription }),
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        });
-
-        if(response.ok){
-            document.location.replace('/discoverRecipes');
-            // For loop to iterate each recipe grabbed from the external API
-        }else{
-            alert('No recipe Found.')
-        }
-    };
-
-    displayRecipes();
-};
-
 // SaveRecipe fn with a fetch method of POST 
 const saveRecipe = async (e) =>{
     e.preventDefault();
 
+    //Select them by
     const recipeName = document.querySelector('#');
     const recipeNutrients = document.querySelector('#');
     const recipeDescription = document.querySelector('#');
@@ -78,4 +82,4 @@ const saveRecipe = async (e) =>{
 document.querySelector('#findBtn').addEventListener('click', searchRecipes);
 
 //considering we have a save btn for each recipe grabbed from the third party API
-document.querySelector('whateverBtn').addEventListener('click', saveRecipe);
+// document.querySelector('whateverBtn').addEventListener('click', saveRecipe);
