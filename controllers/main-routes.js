@@ -46,7 +46,7 @@ router.get('/recipe/:id', async (req, res)=>{
 
         const recipe = recipeData.get({ plain: true });
 
-        res.render('recipe', {
+        res.render('viewSavedRecipes', {
             ...recipe,
             logged_in: req.session.logged_in
         });
@@ -113,8 +113,12 @@ router.get('/login', (req, res)=>{
     res.render('login');
 });
 
-router.get('/createRecipe', (req, res)=>{
+router.get('/createRecipe', withAuth, (req, res)=>{
    //need to add with auth
+   if(req.session.logged_in){
+    res.redirect('/createRecipe');
+    return;
+    }
 
     res.render('createRecipe');
 });
