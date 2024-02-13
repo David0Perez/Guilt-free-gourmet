@@ -7,14 +7,14 @@ const displayRecipes = (data) =>{
         document.querySelector('#div4scroll').innerHTML = `
         <div class= "column is-3 card"i
             <div class="card-image">
-                <figure><img src="${data.hits[i].recipe.image}" alt="..."></figure>
+                <figure><img src="${data.hits[0].recipe.image}" alt="..."></figure>
             </div>
             <div class="card-content">
-                <p class="title">${data.hits[i].recipe.label}</p>
-                <p class="subtitle">${data.hits[i].recipe.ingredients[ingredients.length]}</p>
+                <p class="title">${data.hits[0].recipe.label}</p>
+                <p class="subtitle">${data.hits[0].recipe.ingredients[ingredients.length]}</p>
             </div>
             <div class="content">
-                <a href="${data.hits[i].recipe.url}">${data.hits[i].recipe.source}</a>
+                <a href="${data.hits[0].recipe.url}">${data.hits[0].recipe.source}</a>
             </div>
         </div>  
         `      
@@ -41,12 +41,13 @@ const searchRecipes = async (e) =>{
             //Or a sweet alert saying that the recipe has been saved.
             const dataResponse = await response.json();
             console.log(dataResponse);
+            displayRecipes(dataResponse);
+
         }else{
             alert('No recipe Found.')
         }
     };
 
-    displayRecipes(e);
 
 };
 
