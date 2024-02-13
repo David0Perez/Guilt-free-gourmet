@@ -66,9 +66,6 @@ By allowing the user to look for recipes through a third party API (Edamam), the
 5. Sequelize and MySql for database.
 6. bcrypt for passwords.
 
-## Mock Up
-
-
 ## License
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
