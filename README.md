@@ -78,6 +78,9 @@ By allowing the user to look for recipes through a third party API (Edamam), the
  - Perez, David.
  - Kelly, Troy.
 
+## Link to Heroku Application
+[Heroku App](https://guilt-free-gourmet-3d7c196b8922.herokuapp.com/) 
+
 ## TO DO => Routes are working properly 
 1. Comments and recipes are able to be created => Need to be displayed.
 2. Functionality for findRecipe button => document.location.replace to viewSavedRecipes with route '/recipe/:id' for a single view recipe option. => It's in profile.js folder
