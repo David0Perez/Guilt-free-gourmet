@@ -1,3 +1,5 @@
+//import library for alert
+const Swal = require('sweetalert2');
 // New recipe form Handler
 const newRecipeForm = async (e) =>{
     e.preventDefault();
@@ -46,7 +48,7 @@ const newCommentHandler = async (e) =>{
         }else{
             alert('Couldnt Post this comment. Please Try again!')
         }
-    }
+    };
 };
 
 //Find recipe 
@@ -76,6 +78,6 @@ document.querySelector('#createBtn').addEventListener('submit', newRecipeForm);
 document.querySelector('#submitComment').addEventListener('submit', newCommentHandler);
 
 //Find recipe button function
-document.querySelector('#findRecipeBtn').addEventListener('submit', findRecipe);
+document.querySelector('#findRecipeBtn').addEventListener('click', findRecipe);
 
 // For further implementations => Delete btn

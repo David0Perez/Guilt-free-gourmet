@@ -16,8 +16,8 @@
     justify-items: center;
     align-items: center;
     margin-top: 10%;
-    margin-left: 5%;
-    margin-right: 5%;
+    margin-left: 2%;
+    margin-right: 2%;
 }
 
  .containerBoxes {
@@ -77,7 +77,7 @@ header {
 
 .column:last-child {
     margin-left: 0;
-    background: yellow;  
+    background-color: #00000099;  
 }
 
 @media screen and (max-width: 980px) {
