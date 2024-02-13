@@ -66,9 +66,6 @@ By allowing the user to look for recipes through a third party API (Edamam), the
 5. Sequelize and MySql for database.
 6. bcrypt for passwords.
 
-## Mock Up
-
-
 ## License
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
@@ -77,6 +74,9 @@ By allowing the user to look for recipes through a third party API (Edamam), the
  - Angulo, Maria.
  - Perez, David.
  - Kelly, Troy.
+
+## Link to Heroku Application
+[Heroku App](https://guilt-free-gourmet-3d7c196b8922.herokuapp.com/) 
 
 ## TO DO => Routes are working properly 
 1. Comments and recipes are able to be created => Need to be displayed.
