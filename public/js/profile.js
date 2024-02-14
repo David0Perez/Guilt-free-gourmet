@@ -1,5 +1,4 @@
-//import library for alert
-const Swal = require('sweetalert2');
+
 // New recipe form Handler
 const newRecipeForm = async (e) =>{
     e.preventDefault();
@@ -59,7 +58,7 @@ const findRecipe = async (e) =>{
 
     if(searchFavorite){
         const response = await fetch('/api/recipes', {
-            method: 'POST',
+            method: 'GET',
             body: JSON.stringify({ searchFavorite }),
             headers: {
                 'Content-Type': 'application/json',
@@ -75,9 +74,9 @@ const findRecipe = async (e) =>{
 };
 
 document.querySelector('#createBtn').addEventListener('submit', newRecipeForm);
-document.querySelector('#submitComment').addEventListener('submit', newCommentHandler);
+// document.querySelector('#submitComment').addEventListener('submit', newCommentHandler);
 
 //Find recipe button function
-document.querySelector('#findRecipeBtn').addEventListener('click', findRecipe);
+document.querySelector('#findRecipeBtn').addEventListener('submit', findRecipe);
 
 // For further implementations => Delete btn
