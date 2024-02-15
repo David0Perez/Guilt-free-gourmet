@@ -4,12 +4,18 @@
         "recipe_name": "Chicken Vesuvio",
         "ingredients": "Peas, 230g Chicken, Tomatoes, Olive Oil",
         "description": "Low Carb and dairy free Chicken Vesuvio based with Olive oil and fresh veggies.",
-        "category_id": 1
+        "category_id": 3
     },
     {
         "recipe_name": "Steak Salad",
         "ingredients": "Peas, 400g of steak, lettuce, tomatoes",
         "description": "Low Carb • Sugar Conscious • Keto Friendly • Gluten Free • Wheat Free • Egg Free • Peanut Free • Soy Free • Fish Free • Shellfish Free • Pork Free • Crustacean Free • Celery Free • Mustard Free • Sesame Free • Lupine Free • Mollusk Free • Alcohol Free",
         "category_id": 2
+    },
+    {
+        "recipe_name": "Chicken Catalan",
+        "ingredients": "Pitted prunes, white raisins, 3 1/2 pounds chicken, red wine sauce.",
+        "description": "Low Carb • Sugar Conscious • Keto Friendly • Paleo • Dairy Free • Gluten Free • Wheat Free • Egg Free • Peanut Free • Tree Nut Free • Soy Free • Fish Free • Shellfish Free • Crustacean Free • Celery Free • Mustard Free • Sesame Free • Lupine Free • Mollusk Free • No oil added",
+        "category_id": 3
     }
 ]

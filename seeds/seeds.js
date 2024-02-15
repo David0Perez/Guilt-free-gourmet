@@ -16,7 +16,7 @@ const seedDatabase = async ()=>{
         returning: true,
     });
 
-    for (category of categoryData){
+    for (const category of categoryData){
         await Category.create({
             ...category,
             user_id: users[Math.floor(Math.random() * users.length)].id,
@@ -30,7 +30,7 @@ const seedDatabase = async ()=>{
         });
     };
 
-    for (comment of commentData){
+    for (const comment of commentData){
         await Comments.create({
             ...comment,
             user_id: users[Math.floor(Math.random() * users.length)].id,

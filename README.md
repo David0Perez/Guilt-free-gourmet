@@ -79,6 +79,13 @@ By allowing the user to look for recipes through a third party API (Edamam), the
 [Heroku App](https://guilt-free-gourmet-3d7c196b8922.herokuapp.com/) 
 
 ## TO DO => Routes are working properly 
-1. Comments and recipes are able to be created => Need to be displayed.
-2. Functionality for findRecipe button => document.location.replace to viewSavedRecipes with route '/recipe/:id' for a single view recipe option. => It's in profile.js folder
-3. API request => Need to have recipes displayed on the screen => favorites.js file.
+1. Display the results in myRecipes column => userProfile.handlebars file
+2. Display the comments results in myComments area => viewSavedRecipes
+3. Functionality for saveBtn
+4. Further implementations => Seed each recipe with a picture => locally uploaded.
+
+## Layout =>
+1. Discover recipes => input will grab the values enter by the user to display recipes stored in local database
+2. UserProfile => Has the create recipe options => My recipes will be a handlebars that display all recipes created. 
+Extra button to redirect to viewSavedRecipes file
+3. ViewSavedRecipes => All recipes saved and stored by the user.
