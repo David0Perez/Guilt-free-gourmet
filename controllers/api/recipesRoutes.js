@@ -4,8 +4,17 @@ const router = require('express').Router();
 const { Recipes } = require('../../models');
 const withAuth = require('../../utils/auth');
 
+router.get('/', async (req, res) => {
+    try {
+        const data = await Recipes.findAll();
+        res.status(200).json(data)
+    } catch (err) {
+        res.status(500).json(err)
+    }
+});
+
     //create a new Recipe
-router.post('/', withAuth, async (req, res)=>{
+router.post('/', async (req, res)=>{
         try{
             const newRecipe = await Recipes.create({
                 ...req.body,

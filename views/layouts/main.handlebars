@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,10 +13,10 @@
 </head>
 
 <body>
-  <nav class="">
+  <nav class=" bg-gradient-to-r from-lime-500 to-amber-500">
     <div class="navbar-brand">
       <a class="navbar-item" href="/">
-        <p class="font-bold text-xl">Guilt Free Gourmet</p>
+        <p class="font-bold text-2xl mx-5 my-2">Guilt Free Gourmet</p>
       </a>
       <!-- <div class="navbar-burger" data-target="navbarExampleTransparentExample">
         <span></span>
@@ -23,8 +24,8 @@
         <span></span>
       </div>
     </div> -->
-  
-    
+
+
       <div class=" navbar-end dropdown is-hoverable">
         <div class="dropdown-trigger">
           <button class="button" aria-haspopup="true" aria-controls="dropdown-menu4">
@@ -37,36 +38,52 @@
         <div class="dropdown-menu" id="dropdown-menu4" role="menu">
           <div class="dropdown-content">
             <div class="dropdown-item">
-                <ul><a href="/login">Log In</a></ul>
-                {{!-- Try to apply a IF statement => If user is logged in show the profile, if not the route will be to log in  --}}
-                <ul><a href="/profile">My Profile</a></ul>
-                <ul><a href="/discoverRecipes">Explore Recipes</a></ul>
-                <ul><a href="/" id="logout">Log Out</a></ul>
+              <ul><a class="hover:text-lime-600" href="/login">Log In</a></ul>
+              {{!-- Try to apply a IF statement => If user is logged in show the profile, if not the route will be to
+              log in --}}
+              <ul><a class="hover:text-lime-600" href="/profile">My Profile</a></ul>
+              <ul><a class="hover:text-lime-600" href="/discoverRecipes">Explore Recipes</a></ul>
+              <ul><a class="hover:text-red-600" href="/" id="logout">Log Out</a></ul>
+            </div>
           </div>
         </div>
-    </div>
-      
+      </div>
+
   </nav>
-<style>.hero {
-    background: black url(/images/rawfoodonwood.jpg) center / cover;
-}
-@media (max-width: 1024px) { .hero  { background:  black url(/images/rawfoodonwood.jpg) center / cover; } }
-@media (max-width: 768px) { .hero  { background: black url(/images/rawfoodonwood.jpg) center / cover; } }</style>
-  
-  <section class="hero is-fullheight" >
-<body id="main-body"> 
-    <main class="container container-fluid mt-5">
+  <style>
+    .hero {
+      background: black url(/images/rawfoodonwood.jpg) center / cover;
+    }
+
+    @media (max-width: 1024px) {
+      .hero {
+        background: black url(/images/rawfoodonwood.jpg) center / cover;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        background: black url(/images/rawfoodonwood.jpg) center / cover;
+      }
+    }
+  </style>
+
+  <section class="hero is-fullheight">
+
+    <body id="main-body">
+      <main class="container container-fluid mt-5">
         <!-- Render the sub layout -->
         {{{ body }}}
       </main>
-</body>
-<footer>
-    <div>
+    </body>
+    <footer>
+      <div>
         <p class="text-center has-text-white">&copy; 2024 Guilt Free Gourmet</p>
-     </div>
-</footer>
+      </div>
+    </footer>
 
-{{#if logged_in}}
-  <script src="/js/logout.js"></script>
-  {{/if}}
+    {{#if logged_in}}
+    <script src="/js/logout.js"></script>
+    {{/if}}
+
 </html>
