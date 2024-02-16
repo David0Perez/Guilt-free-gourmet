@@ -7,15 +7,17 @@
         <section class="columns">
             <div class="column text-center" id="intro-page">
                 <h2 class="is-size-5 my-5 text-lime-500 font-medium">My Comments</h2>
-                
-                <div class="div4scroll">
-                  <ul>
+                <ul>
                    {{#if comments.length}}
                    {{#each comments as |comment|}}
-                   <li><a href="/recipe/{{recipe.id}}">{{recipe.name}}</a></li>
+                   <li><a href="/recipe/{{recipe.id}}">{{recipe.recipe_name}}</a></li>
                    {{/each}}
                    {{/if}}
-                  </ul>
+                </ul>
+                <div class="div4scroll">
+                   <h2 class="text-center is-size-5 my-5">{{username}}</h2>
+                  <p class="my-4">{{{comment_text}}}</p>
+                 </div>
                  </div>
             
             </div>
@@ -50,6 +52,5 @@
         <p class="text-center has-text-white">&copy; 2024 Guilt Free Gourmet</p>
      </div>
 
-     <script src="/js/profile.js"></script>
-
+  <script src="/js/newComment.js"></script>
 </section>

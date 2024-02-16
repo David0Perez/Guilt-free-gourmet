@@ -3,8 +3,19 @@ const { User, Recipes, Comments } = require('../models');
 // Import Authentification middleware
 const withAuth = require('../utils/auth');
 
-// Once data is grabbed from the API => Recipes will be locally stored in the database, as well as the ones created.
-router.get('/', async (req, res) =>{
+//Route for the homepage
+router.get('/', async (req, res)=>{
+   res.render('homepage', {
+        logged_in: req.session.logged_in
+   })
+})
+
+router.get('/discoverRecipes', async (req, res) =>{
+    if(!req.session.logged_in){
+        res.redirect('/login');
+        return;
+    };
+
     try{
         // GET all recipes and JOIN with user Data
         const recipeData = await Recipes.findAll({
@@ -20,7 +31,7 @@ router.get('/', async (req, res) =>{
         const recipes = recipeData.map((recipe) => recipe.get({ plain: true }));
 
         // We pass the serialized data and session into template
-        res.render('homepage', {
+        res.render('discoverRecipes', {
             recipes,
             logged_in: req.session.logged_in
         });
@@ -43,7 +54,7 @@ router.get('/recipe/:id', async (req, res)=>{
         });
 
         const recipe = recipeData.get({ plain: true });
-
+        
         res.render('viewSavedRecipes', {
             ...recipe,
             logged_in: req.session.logged_in
@@ -53,38 +64,51 @@ router.get('/recipe/:id', async (req, res)=>{
     }
 });
 
-//If the user is not logged in => Can not have access to discover recipes
-
-// GET all comments and JOIN with => User data or Recipe data ?
-router.get('/discoverRecipes', async (req, res)=>{
-   
-    if(!req.session.logged_in){
-        res.redirect('/login');
-        return;
-    }
+router.get('/recipe/:id', async (req, res) =>{
     try{
-        const commentData = await Comments.findAll({
+        const commentData = await Comments.findByPk(req.params.id, {
             include: [
                 {
-                    //Ask the model => User or Recipe
                     model: Recipes,
-                    attributes: ['recipe_name'],
+                    attributes: [ 'recipe_id' ],
                 },
             ],
         });
 
-        // //Serialize data => Easier way to read it.
-        const comments = commentData.map((comment) => comment.get({ plain: true }));
+        const comment = commentData.get({ plain: true })
 
-        //Pass serialize data and session into template
-        res.render('discoverRecipes', {
-            comments,
+        res.render('viewSavedRecipes', {
+            ...comment,
             logged_in: req.session.logged_in
         });
     }catch(err){
-        res.status(500).json(err);
+        res.status(500).json(err)
     }
-});
+})
+
+// GET all comments and JOIN with => User data or Recipe data ?
+// router.get('/discoverRecipes', async (req, res)=>{
+   
+//     if(!req.session.logged_in){
+//         res.redirect('/login');
+//         return;
+//     }
+//     try{
+//         
+//         });
+
+//         // //Serialize data => Easier way to read it.
+//         const comments = commentData.map((comment) => comment.get({ plain: true }));
+
+//         //Pass serialize data and session into template
+//         res.render('discoverRecipes', {
+//             comments,
+//             logged_in: req.session.logged_in
+//         });
+//     }catch(err){
+//         res.status(500).json(err);
+//     }
+// });
 
 
 //Use withAuth middleware to prevent access to route
