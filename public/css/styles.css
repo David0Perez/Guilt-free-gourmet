@@ -65,19 +65,16 @@ header {
     border: 1px solid #666;
     margin: 2px;
     padding: 10px;
-    background: pink;
     transition: 0.3s;
 
 }
 
 .column:first-child {
     margin-left: 0;
-    background: blue;
 }
 
 .column:last-child {
-    margin-left: 0;
-    background-color: #00000099;  
+    margin-left: 0;    
 }
 
 @media screen and (max-width: 980px) {
