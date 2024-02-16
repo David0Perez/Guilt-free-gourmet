@@ -14,7 +14,7 @@ Comments.init(
             autoIncrement: true,
         },
         comment_text: {
-            type: DataTypes.TEXT,
+            type: DataTypes.STRING,
             allowNull: false,
         },
         recipe_id: {
