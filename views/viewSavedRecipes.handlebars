@@ -10,13 +10,12 @@
                 <ul>
                    {{#if comments.length}}
                    {{#each comments as |comment|}}
-                   <li><a href="/recipe/{{recipe.id}}">{{recipe.recipe_name}}</a></li>
+                    <p class="my-4">{{comment.comment_text}}Hello</p>
                    {{/each}}
                    {{/if}}
                 </ul>
                 <div class="div4scroll">
                    <h2 class="text-center is-size-5 my-5">{{username}}</h2>
-                  <p class="my-4">{{{comment_text}}}</p>
                  </div>
                  </div>
             
@@ -33,7 +32,7 @@
                 <h2 class="is-size-5 my-5 text-yellow-300 font-medium"> Add Comments</h2>
              
                 <div class="field">
-                  <form class="form new-recipe-form" id="submitComment">
+                  <form class="form new-recipe-form" id="submitComment" data-currentId="{{currentRecipeId}}">
                       <div class="control">
                         <textarea class="textarea is-small" placeholder="Add your comments here" id="comment_text"></textarea>
                       </div>

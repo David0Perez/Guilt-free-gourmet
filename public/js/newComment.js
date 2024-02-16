@@ -1,13 +1,17 @@
 //New comment form Handler
 const newCommentHandler = async (e) =>{
     e.preventDefault();
+    console.log('Hello world')
 
-    const textComment = document.querySelector('#comment_text').value.trim();
+    const comment_text = document.querySelector('#comment_text').value.trim();
+    const recipe_id = +document.querySelector('#submitComment').getAttribute('data-currentId');
 
-    if(textComment){
+    console.log(recipe_id);
+
+    if(comment_text && recipe_id){
         const response = await fetch('/api/comments', {
             method: 'POST',
-            body: JSON.stringify({ textComment }),
+            body: JSON.stringify({ comment_text, recipe_id }),
             headers: {
                 'Content-Type': 'application/json',
             },
@@ -17,7 +21,7 @@ const newCommentHandler = async (e) =>{
             const data = await response.json();
             console.log('Comment added');
             console.log(data);
-            document.location.replace('/profile');
+            // document.location.reload();
         }else{
             alert('Couldnt Post this comment. Please Try again!')
         }
