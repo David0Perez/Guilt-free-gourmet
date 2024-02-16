@@ -64,6 +64,7 @@ router.get('/recipe/:id', async (req, res)=>{
     }
 });
 
+//GET comments for each recipe that has been posted
 router.get('/recipe/:id', async (req, res) =>{
     try{
         const commentData = await Comments.findByPk(req.params.id, {
@@ -86,29 +87,7 @@ router.get('/recipe/:id', async (req, res) =>{
     }
 })
 
-// GET all comments and JOIN with => User data or Recipe data ?
-// router.get('/discoverRecipes', async (req, res)=>{
-   
-//     if(!req.session.logged_in){
-//         res.redirect('/login');
-//         return;
-//     }
-//     try{
-//         
-//         });
-
-//         // //Serialize data => Easier way to read it.
-//         const comments = commentData.map((comment) => comment.get({ plain: true }));
-
-//         //Pass serialize data and session into template
-//         res.render('discoverRecipes', {
-//             comments,
-//             logged_in: req.session.logged_in
-//         });
-//     }catch(err){
-//         res.status(500).json(err);
-//     }
-// });
+// GET  and JOIN with => User data or Recipe data ?
 
 
 //Use withAuth middleware to prevent access to route

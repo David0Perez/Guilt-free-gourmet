@@ -2,10 +2,10 @@
 const newCommentHandler = async (e) =>{
     e.preventDefault();
 
-    const textComment = document.querySelector('#comment_text');
+    const textComment = document.querySelector('#comment_text').value.trim();
 
     if(textComment){
-        const response = await fetch('/api/users', {
+        const response = await fetch('/api/comments', {
             method: 'POST',
             body: JSON.stringify({ textComment }),
             headers: {
@@ -14,6 +14,9 @@ const newCommentHandler = async (e) =>{
         });
 
         if(response.ok){
+            const data = await response.json();
+            console.log('Comment added');
+            console.log(data);
             document.location.replace('/profile');
         }else{
             alert('Couldnt Post this comment. Please Try again!')
