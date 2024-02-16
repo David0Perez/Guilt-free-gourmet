@@ -41,7 +41,7 @@ router.get('/discoverRecipes', async (req, res) =>{
     }
 });
 
-//Single recipe Card
+//Single recipe Card => Comments on it.
 router.get('/recipe/:id', async (req, res)=>{
     try{
         const recipeData = await Recipes.findByPk(req.params.id, {
@@ -50,45 +50,25 @@ router.get('/recipe/:id', async (req, res)=>{
                     model: User,
                     attributes: ['username'],
                 },
+                {
+                    model: Comments,
+                },
+
             ],
         });
 
         const recipe = recipeData.get({ plain: true });
-        
+        console.log(recipe)
+
         res.render('viewSavedRecipes', {
             ...recipe,
+            currentRecipeId: req.params.id,
             logged_in: req.session.logged_in
         });
     }catch(err){
         res.status(500).json(err);
     }
 });
-
-//GET comments for each recipe that has been posted
-router.get('/recipe/:id', async (req, res) =>{
-    try{
-        const commentData = await Comments.findByPk(req.params.id, {
-            include: [
-                {
-                    model: Recipes,
-                    attributes: [ 'recipe_id' ],
-                },
-            ],
-        });
-
-        const comment = commentData.get({ plain: true })
-
-        res.render('viewSavedRecipes', {
-            ...comment,
-            logged_in: req.session.logged_in
-        });
-    }catch(err){
-        res.status(500).json(err)
-    }
-})
-
-// GET  and JOIN with => User data or Recipe data ?
-
 
 //Use withAuth middleware to prevent access to route
     router.get('/profile', withAuth, async (req, res)=>{
