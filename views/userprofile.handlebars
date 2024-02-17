@@ -13,15 +13,12 @@
           <ul>
             {{#if recipes.length}}
             {{#each recipes as |recipe|}}
-            <li><a href="/recipe/{{recipe.id}}">{{recipe.recipe_name}}</a></li>
+               <h2 class="text-center is-size-5 my-5">{{recipe.recipe_name}}.</h2>
+              <p class="my-4">{{ingredients}}.</p>
+              <p class="my-4">{{description}}.</p>
             {{/each}}
-            {{/if}}
+            {{/if}}  
           </ul>
-        </div>
-        <div>
-          <h2 class="text-center is-size-5 my-5">{{recipe_name}}</h2>
-          <p class="my-4">{{{ingredients}}}</p>
-          <p class="my-4">{{description}}</p>
         </div>
       </div>
     </section>
