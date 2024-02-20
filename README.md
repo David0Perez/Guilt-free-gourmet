@@ -78,14 +78,7 @@ By allowing the user to look for recipes through a third party API (Edamam), the
 ## Link to Heroku Application
 [Heroku App](https://guilt-free-gourmet-3d7c196b8922.herokuapp.com/) 
 
-## TO DO => Routes are working properly 
-1. Display the results in myRecipes column => userProfile.handlebars file
-2. Display the comments results in myComments area => viewSavedRecipes
-3. Functionality for saveBtn
-4. Further implementations => Seed each recipe with a picture => locally uploaded.
+## Future Implementations
 
-## Layout =>
-1. Discover recipes => input will grab the values enter by the user to display recipes stored in local database
-2. UserProfile => Has the create recipe options => My recipes will be a handlebars that display all recipes created. 
-Extra button to redirect to viewSavedRecipes file
-3. ViewSavedRecipes => All recipes saved and stored by the user.
+1. The Ability for the user to have access to pictures of each recipe.
+2. Have each recipe displayed on screen from the user profile.

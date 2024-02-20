@@ -9,10 +9,10 @@ const newRecipeForm = async (e) =>{
 
     //Bear in mind => Recipes created are just gonna be displayed on a profile section
     // Recipes requested by a third party API are gonna show up on a Explore Recipes section
-    if(recipe_name && ingredients && description){
+    if(recipe_name && ingredients && description ){
         const response = await fetch('/api/recipes', {
             method: 'POST',
-            body: JSON.stringify( { recipe_name, ingredients, description }),
+            body: JSON.stringify( { recipe_name, ingredients, description}),
             headers: {
                 'Content-Type': 'application/json',
             }
@@ -20,7 +20,7 @@ const newRecipeForm = async (e) =>{
 
         if(response.ok){
             const data = await response.json();
-            console.log('Recipe Created! Go to your profile.')
+            alert('Recipe Created! Go to your Recipes section!')
             console.log(data);
         }else{
             alert('The Recipe couldn`t be created');
@@ -29,5 +29,3 @@ const newRecipeForm = async (e) =>{
 };
 
 document.querySelector('#new-Recipe-form').addEventListener('submit', newRecipeForm);
-
-// For further implementations => Delete btn
