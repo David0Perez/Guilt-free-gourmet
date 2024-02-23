@@ -1,9 +1,9 @@
 const router = require('express').Router();
 
-router.post('/', async (req, res) =>{
+router.get('/', async (req, res) =>{
     //Third party API request
-    let APP_ID = '526060cb';
-    let apiKey = '1992a8d8dcc021eb8c707c160456026c';
+    let APP_ID = '46feae64';
+    let apiKey = 'fa91b35fcbae8dd1363f5105c7a47c5b';
 
     try{
         //that q = user input when search
@@ -17,5 +17,5 @@ router.post('/', async (req, res) =>{
         res.status(400).json(err);
     }
 });
-
+// https://api.edamam.com/api/recipes/v2?type=public&app_id=526060cb&app_key=fa91b35fcbae8dd1363f5105c7a47c5b&q=salad
 module.exports = router;
